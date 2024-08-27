@@ -14,6 +14,8 @@ An exetremely simple two joint robot arm simulated in Mujoco. Uses a custom buil
 - `/rl/robotarm/robot_arm.xml`- Mujoco XML file describing the robot arm
 - `/rl/robotarm/lib.py` - Various functions related to the inverse kinematics of the arm
 
+A little demo of how it works (hardcoded version without inverse kinematics): [Twitter post](https://x.com/Jernstrom_dev/status/1822298180676948061)
+
 TODO:
 
 - Simple description of the math involved and how it was done
