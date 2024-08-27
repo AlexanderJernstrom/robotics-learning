@@ -8,14 +8,6 @@ Currently contains two small little projects outlined below
 
 ## "Robot" arm
 
-This is a quite messy repo with a bunch of code snippets and notebooks related to tracking my progress in robotics and RL.
-
-# Projects
-
-Currently contains two small little projects outlined below
-
-## "Robot" arm
-
 An exetremely simple two joint robot arm simulated in Mujoco. Uses a custom built inverse kinematics solver (uses optimization) to move the arm to a certain target. Implemented in Jax and MJX. Kind of works but still a bit janky and could be made much more dynamic. E.g relies on hand calculating Jacobian which could be done using rotation matrices (on the roadmap). Can be found in `/rl/robotarm` with the following files:
 
 - `/rl/robotarm/mjx.ipynb` - Notebook responsible for running the simulation in Mujoco
