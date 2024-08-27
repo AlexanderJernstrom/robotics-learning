@@ -22,7 +22,7 @@ TODO:
 
 ## Multiarm bandit
 
-A very simple simulation of the multiarm bandit where a greedy and an \(\epsilon\)-greedy method were compared. This exercise is taken from the book "Reinforcement Learning: An Introduction" by Richard Sutton and Andrew Barto from the section on Multi-arm bandits. My first real Reinforcement learning project, something is wrong since \(\epsilon\) method should perform much better, also on the roadmap to fix. Most of the code lies in `/rl/multiarmbandit.ipynb`.
+A very simple simulation of the multiarm bandit where a greedy and an $$\epsilon$$-greedy method were compared. This exercise is taken from the book "Reinforcement Learning: An Introduction" by Richard Sutton and Andrew Barto from the section on Multi-arm bandits. My first real Reinforcement learning project, something is wrong since $$\epsilon$$ method should perform much better, also on the roadmap to fix. Most of the code lies in `/rl/multiarmbandit.ipynb`.
 
 # Currently learning
 
