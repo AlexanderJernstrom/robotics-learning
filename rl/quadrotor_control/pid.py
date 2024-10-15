@@ -8,10 +8,16 @@ class PID:
         self.error_sum = 0
         self.prev_error = 0
         
-    def control(self, current: float, reference: float):
+    def control(self, current: float, reference: float, time_step):
         error = reference - current
         d_error = error - self.prev_error 
+
         self.error_sum += error 
         self.prev_error = error
-        return self.K_p * error + self.K_d * d_error + self.K_i * self.error_sum 
+
+        proportional = self.K_p * error 
+        derivative = self.K_d * d_error 
+        integral = self.K_i * self.error_sum
+       
+        return proportional + derivative + integral 
 
