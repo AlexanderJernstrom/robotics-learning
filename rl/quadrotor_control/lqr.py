@@ -98,15 +98,6 @@ def control_to_motor_forces(U: jnp.ndarray, d):
     Returns:
     array: Individual motor forces [F1, F2, F3, F4]
     """
-    mixer = jnp.array([
-    [ 0.25,  -d,     -d,    -0.1],  # FR
-    [ 0.25,  -d,      d,     0.1],  # FL
-    [ 0.25,   d,     -d,     0.1],  # BR
-    [ 0.25,   d,      d,    -0.1]   # BL
-    ])
-
-    motor_controls = mixer @ U
-
 
     other_controls = jnp.array([
         jnp.sum(U), # front right
