@@ -12,7 +12,7 @@ Altitude control of a quadrotor in Mujoco.
 - `/rl/quadrotor_control/lqr.py` - Main LQR code
 - `/rl/quadrotor_control/control.ipynb` - Simulation and control results
 
-[Twitter post]:(https://x.com/Jernstrom_dev/status/1856242441575190693)
+[Twitter post](https://x.com/Jernstrom_dev/status/1856242441575190693)
 [Blog post](https://wobbly-speedboat-461.notion.site/LQR-control-of-quadrotor-altitude-13c2c74e93b280cbbe5af3aa7c07590f)
 
 ## "Robot" arm
