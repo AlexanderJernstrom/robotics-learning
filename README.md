@@ -7,7 +7,8 @@ This is a quite messy repo with a bunch of code snippets and notebooks related t
 Currently contains two small little projects outlined below
 
 ## Quadrotor Control
-Altitude control of a quadrotor in Mujoco. 
+
+Altitude control of a quadrotor in Mujoco.
 
 - `/rl/quadrotor_control/lqr.py` - Main LQR code
 - `/rl/quadrotor_control/control.ipynb` - Simulation and control results
@@ -24,6 +25,10 @@ An exetremely simple two joint robot arm simulated in Mujoco. Uses a custom buil
 - `/rl/robotarm/lib.py` - Various functions related to the inverse kinematics of the arm
 
 A little demo of how it works (hardcoded version without inverse kinematics): [Twitter post](https://x.com/Jernstrom_dev/status/1822298180676948061)
+
+### Update - version 25th december 2024
+
+An updated version of the IK(inverse kinematics) solver using a 3dof robot arm. Actaully works now.
 
 TODO:
 
