@@ -1,3 +1,9 @@
+import mujoco
+import mujoco.viewer
+import jax.numpy as jnp
+from ik import IKSolver
+
+xml = """
 <mujoco model="3dof_robot_arm">
     <compiler angle="degree" coordinate="local"/>
     <option gravity="0 0 -9.81" integrator="RK4" timestep="0.01"/>
@@ -25,13 +31,13 @@
                     <!-- End-effector -->
                     <body name="end_effector" pos="0 0 0.5">
                         <geom type="sphere" size="0.05" rgba="1 0 0 1" mass="0.2"/>
-                        <site name="end_eff" pos="0 0 0" size="0.01" rgba="1 0 0 1"/>
+                        <site name="end_eff" pos="0.2 0 0" size="0.01" rgba="1 0 0 1"/>
                     </body>
                 </body>
             </body>
         </body>
 <body name="target" pos="0.3 0.3 1">
-            <geom name="target" type="sphere" size="0.02" rgba="0 0 1 0.5"/>
+            <geom name="target" type="sphere" size="0.02" rgba="2 0 0 0.5"/>
         </body>
     </worldbody>
 
@@ -47,3 +53,29 @@
     <framepos name="end_effector_pos" objtype="body" objname="end_effector"/>
 </sensor> 
 </mujoco>
+"""
+
+mj_model = mujoco.MjModel.from_xml_string(xml)
+mj_data = mujoco.MjData(mj_model)
+renderer = mujoco.Renderer(mj_model)
+
+target = jnp.array([0.3, 0.3, 1])
+
+solver = IKSolver(desired_pose=target, initial_q=jnp.array([0, -jnp.pi/2, jnp.pi/2]), learning_rate=0.001, joint_lengths=jnp.array([]))
+
+
+with mujoco.viewer.launch_passive(
+    model=mj_model, data=mj_data, show_left_ui=False
+) as viewer:
+    mujoco.mjv_defaultFreeCamera(mj_model, viewer.cam)
+    viewer.opt.frame = mujoco.mjtFrame.mjFRAME_SITE
+    viewer.sync()
+
+    mujoco.mj_forward( mj_model, mj_data)
+    renderer.update_scene(mj_data, viewer.cam)
+    result_plot = renderer.render()
+    while viewer.is_running():
+        mujoco.mj_step(mj_model, mj_data)
+        mujoco.mj_camlight(mj_model, mj_data)
+        viewer.sync()
+        
