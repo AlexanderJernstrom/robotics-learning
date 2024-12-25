@@ -9,7 +9,7 @@ Currently contains two small little projects outlined below
 ## Quadrotor Control
 Altitude control of a quadrotor in Mujoco. 
 
-- `/rl/quadrotor_control/lqr.py` - Main LQR code
+- `/rl/quadrotor_control/lqr.py` - Main LQR code (yes optimal control is kind of RL)
 - `/rl/quadrotor_control/control.ipynb` - Simulation and control results
 
 [Twitter post](https://x.com/Jernstrom_dev/status/1856242441575190693)
