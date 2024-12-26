@@ -28,7 +28,20 @@ A little demo of how it works (hardcoded version without inverse kinematics): [T
 
 ### Update - version 25th december 2024
 
-An updated version of the IK(inverse kinematics) solver using a 3dof robot arm. Actaully works now.
+An updated version of the IK(inverse kinematics) solver using a 3dof robot arm. Actually works now. (Big shoutout to Alexis Fraudita's [blog](https://alefram.github.io/posts/Basic-inverse-kinematics-in-Mujoco) which covers IK in mujoco really well.)The new one consists of these files:
+
+- `/rl/robotarm/ik.py` - Inverse kinematics solver
+- `/rl/robotarm/ik_test.py` - Testing of the IK solver. Creates two images `initial.png` and `result.png`which represent the starting pose of the arm and the end pose of the arm.
+
+The results look something like this:
+
+Start:
+
+![Starting pose of robot arm](./initial.png)
+
+End:
+
+![End pose of the robot, it touches the target](./result.png)
 
 TODO:
 
