@@ -26,6 +26,15 @@ An exetremely simple two joint robot arm simulated in Mujoco. Uses a custom buil
 
 A little demo of how it works (hardcoded version without inverse kinematics): [Twitter post](https://x.com/Jernstrom_dev/status/1822298180676948061)
 
+### Update - version 15th july 2025
+
+Basic position control with PD working.
+
+- `/rl/robotarm/robot_control.ipynb` - Main notebook for robot control using builting position modules from mujoco
+  Control is done by applying PD on the difference between each current joint position and the calculated desired joint position from the inverse kinematics.
+
+Next step is to generate a smooth trajectory for the robot arm to follow.
+
 ### Update - version 25th december 2024
 
 An updated version of the IK(inverse kinematics) solver using a 3dof robot arm. Actually works now. (Big shoutout to Alexis Fraudita's [blog](https://alefram.github.io/posts/Basic-inverse-kinematics-in-Mujoco) which covers IK in mujoco really well.)The new one consists of these files:
