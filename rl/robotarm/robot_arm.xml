@@ -1,5 +1,5 @@
 <mujoco model="3dof_robot_arm">
-    <compiler angle="degree" coordinate="local"/>
+    <compiler angle="radian" coordinate="local"/>
     <option gravity="0 0 -9.81" integrator="RK4" timestep="0.01"/>
 
     <worldbody>
@@ -36,9 +36,9 @@
     </worldbody>
 
     <actuator>
-        <motor joint="joint1" ctrlrange="-1 1" ctrllimited="true"/>
-        <motor joint="joint2" ctrlrange="-1 1" ctrllimited="true" gear="10"/>
-        <motor joint="joint3" ctrlrange="-1 1" ctrllimited="true" gear="10"/>
+        <position joint="joint1" ctrlrange="-1.57 1.57" kp="7" kv="0.4" ctrllimited="true" gear="2"/>
+        <position joint="joint2" ctrlrange="-1.57 1.57" ctrllimited="true" />
+        <position joint="joint3" ctrlrange="-1.57 1.57" ctrllimited="true" />
     </actuator>
    <sensor>
     <jointpos name="joint1_pos" joint="joint1"/>

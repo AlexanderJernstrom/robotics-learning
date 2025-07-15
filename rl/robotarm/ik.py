@@ -42,13 +42,4 @@ class IKSolver:
             gradient = jnp.linalg.pinv(jacobian).dot(error)
             q += 0.01 * gradient 
             error = self.desired_position - self.forward_kinematics(q) 
-        print("goal forward kinematics", self.forward_kinematics(q))
         return q
-
-
-
-
-
-
-
-
