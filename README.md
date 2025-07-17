@@ -26,6 +26,13 @@ An exetremely simple two joint robot arm simulated in Mujoco. Uses a custom buil
 
 A little demo of how it works (hardcoded version without inverse kinematics): [Twitter post](https://x.com/Jernstrom_dev/status/1822298180676948061)
 
+### Update - version 17th july 2025
+
+Trajectory generation with 5th degree polynomials are now working, yielding a much smoother path.
+
+- `/rl/robotarm/robot_control.ipynb` - Same as below however now it does generation of trajecotory before hand
+- `/rl/robotarm/trajectory` - Class with code for generating a trajectory with 5th degree polynomials.
+
 ### Update - version 15th july 2025
 
 Basic position control with PD working.
